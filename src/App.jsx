@@ -1,4 +1,3 @@
-console.log("TRACE: App.jsx start");
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -79,9 +78,6 @@ function App() {
 
   return (
     <>
-      <div style={{ position: 'fixed', top: 0, left: 0, zIndex: 9999, color: 'white', background: 'red', padding: '10px' }}>
-        REACT MOUNTED
-      </div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
