@@ -1,0 +1,89 @@
+<!-- //index.html  -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./script.js"></script>
+
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-300 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-4xl bg-white rounded-3xl shadow-xl p-10">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-2">
+        🚀 Resume Builder
+      </h1>
+      <p class="text-gray-600 text-lg">Create your professional resume in minutes</p>
+    </div>
+
+    <form id="resumeForm" class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input name="name" placeholder="Full Name" required class="border px-4 py-2 rounded-lg" />
+        <input name="email" placeholder="Email" type="email" required class="border px-4 py-2 rounded-lg" />
+        <input name="phone" placeholder="Phone Number" required class="border px-4 py-2 rounded-lg" />
+        <input name="skills" placeholder="HTML, CSS, React" required class="border px-4 py-2 rounded-lg" />
+        <textarea name="summary" placeholder="Write a short bio..." rows="3" class="md:col-span-2 border px-4 py-2 rounded-lg"></textarea>
+        <input name="linkedin" placeholder="https://linkedin.com/in/username" class="border px-4 py-2 rounded-lg" />
+        <input name="github" placeholder="https://github.com/username" class="border px-4 py-2 rounded-lg" />
+        <input name="portfolio" placeholder="https://yourportfolio.com" class="border px-4 py-2 rounded-lg" />
+      </div>
+
+      <textarea name="projects" placeholder="Projects (Title, Description, Link...)" rows="3" class="w-full border px-4 py-2 rounded-lg"></textarea>
+      <textarea name="education" placeholder="Education (Degree, College, Year...)" rows="2" class="w-full border px-4 py-2 rounded-lg"></textarea>
+      <textarea name="achievements" placeholder="Achievements (Optional)" rows="2" class="w-full border px-4 py-2 rounded-lg"></textarea>
+
+      <div class="text-center mt-6">
+        <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">
+          Generate Resume PDF
+        </button>
+        <p class="text-xs text-gray-400 mt-3">Powered by AI Resume Builder © 2025</p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('resumeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      const response = await fetch('http://localhost:5000/generate-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'resume.pdf';
+        a.click();
+        URL.revokeObjectURL(url);
+      } else {
+        alert('Failed to generate resume PDF.');
+      }
+    });
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+  </head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>
