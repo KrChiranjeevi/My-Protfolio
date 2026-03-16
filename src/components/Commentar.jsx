@@ -241,6 +241,7 @@ const Komentar = () => {
 
     // Fetch pinned comment
     useEffect(() => {
+        if (!supabase) return;
         const fetchPinnedComment = async () => {
             try {
                 const { data, error } = await supabase
@@ -267,6 +268,7 @@ const Komentar = () => {
 
     // Fetch regular comments (excluding pinned) and set up real-time subscription
     useEffect(() => {
+        if (!supabase) return;
         const fetchComments = async () => {
             const { data, error } = await supabase
                 .from('portfolio_comments')
@@ -306,7 +308,7 @@ const Komentar = () => {
     }, []);
 
     const uploadImage = useCallback(async (imageFile) => {
-        if (!imageFile) return null;
+        if (!imageFile || !supabase) return null;
         
         const fileExt = imageFile.name.split('.').pop();
         const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
@@ -331,6 +333,12 @@ const Komentar = () => {
         setError('');
         setIsSubmitting(true);
         
+        if (!supabase) {
+            setError('Comments are currently unavailable. Please configure Supabase.');
+            setIsSubmitting(false);
+            return;
+        }
+
         try {
             const profileImageUrl = await uploadImage(imageFile);
             

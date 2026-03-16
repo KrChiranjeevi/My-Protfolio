@@ -294,6 +294,16 @@ export default function FullWidthTabs() {
 
   const fetchData = useCallback(async () => {
     try {
+      if (!supabase) {
+        // Supabase not configured, use local data only
+        setProjects(localProjects);
+        setCertificates(localCertificates);
+        localStorage.setItem("projects", JSON.stringify(localProjects));
+        localStorage.setItem("certificates", JSON.stringify(localCertificates));
+        window.dispatchEvent(new Event("portfolioDataUpdated"));
+        return;
+      }
+
       // Mengambil data dari Supabase secara paralel
       const [projectsResponse, certificatesResponse] = await Promise.all([
         supabase.from("projects").select("*").order('id', { ascending: true }),
