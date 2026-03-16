@@ -76,6 +76,10 @@ const ProjectPageLayout = () => (
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
+  useEffect(() => {
+    console.log("App mounted, showWelcome:", showWelcome);
+  }, [showWelcome]);
+
   return (
     <BrowserRouter>
       <Routes>
