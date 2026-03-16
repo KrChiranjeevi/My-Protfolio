@@ -74,6 +74,7 @@ const ProjectPageLayout = () => (
 );
 
 function App() {
+  console.log("TRACE: App function execution");
   const [showWelcome, setShowWelcome] = useState(true);
 
   return (
