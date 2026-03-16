@@ -1,3 +1,4 @@
+console.log("TRACE: supabase.js start");
 import { createClient } from '@supabase/supabase-js';
 
 // Access environment variables using import.meta.env for Vite

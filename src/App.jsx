@@ -1,3 +1,4 @@
+console.log("TRACE: App.jsx start");
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -82,12 +83,13 @@ function App() {
         REACT MOUNTED
       </div>
       <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
-        <Route path="/project/:id" element={<ProjectPageLayout />} />
-         <Route path="*" element={<NotFoundPage />} /> {/* Ini route 404 */}
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+          <Route path="/project/:id" element={<ProjectPageLayout />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
