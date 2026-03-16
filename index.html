@@ -63,9 +63,17 @@
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+        <div style="background: #030014; color: white; height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
+            <h1 style="font-size: 2rem; color: #6366f1; animation: pulse 2s infinite;">Loading Portfolio...</h1>
+        </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
-  
-
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+    </style>
   </body>
 </html>
