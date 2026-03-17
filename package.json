@@ -63,7 +63,7 @@
   "main": "eslint.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KrChiranjeevi/Chiranjeevi-Portfolio.git"
+    "url": "git+https://github.com/KrChiranjeevi/My-Portfolio.git"
   },
   "keywords": [],
   "author": "",
@@ -71,5 +71,5 @@
   "bugs": {
     "url": "https://github.com/KrChiranjeevi/Chiranjeevi-Portfolio/issues"
   },
-  "homepage": "https://github.com/KrChiranjeevi/Chiranjeevi-Portfolio#readme"
+  "homepage": "https://krchiranjeevi.github.io/My-Portfolio/"
 }
