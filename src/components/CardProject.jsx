@@ -19,7 +19,7 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
       alert("Project details are not available");
     }
   };
-  
+    const resolveImg = (img) => img ? `${import.meta.env.BASE_URL}${img.replace(/^\//, '')}` : '';
 
   return (
     <div className="group relative w-full">
@@ -30,7 +30,7 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
         <div className="relative p-5 z-10">
           <div className="relative overflow-hidden rounded-lg">
             <img
-              src={Img}
+              src={resolveImg(Img)}
               alt={Title}
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
             />

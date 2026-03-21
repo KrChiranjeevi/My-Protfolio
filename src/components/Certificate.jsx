@@ -69,7 +69,7 @@ const Certificate = ({ ImgSertif }) => {
 					}}>
 					<img
 						className="certificate-image"
-						src={ImgSertif}
+						src={ImgSertif ? `${import.meta.env.BASE_URL}${ImgSertif.replace(/^\//, '')}` : ''}
 						alt="Certificate"
 						style={{
 							width: "100%",
@@ -191,7 +191,7 @@ const Certificate = ({ ImgSertif }) => {
 					{/* Modal Image */}
 					<img
 						ref={modalImgRef}
-						src={ImgSertif}
+						src={ImgSertif ? `${import.meta.env.BASE_URL}${ImgSertif.replace(/^\//, '')}` : ''}
 						alt="Certificate Full View"
 						style={{
 							display: "block",
