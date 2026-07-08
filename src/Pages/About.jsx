@@ -50,7 +50,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
           <img
-            src={`${import.meta.env.BASE_URL}profile (2).jpg`}
+            src={`${import.meta.env.BASE_URL}Photo.png`}
             alt="Profile"
             className="w-full h-full object-cover object-[50%_10%] scale-[1.25] transition-all duration-700 group-hover:scale-[1.35] group-hover:rotate-2"
             loading="lazy"
