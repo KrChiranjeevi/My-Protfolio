@@ -148,7 +148,7 @@ const localProjects = [
     Title: "Internship-TaxPal", 
     Description: "A comprehensive financial management and tax estimation tool designed to simplify accounting for freelancers and small businesses.", 
     Img: "/project_taxpal.png", 
-    Link: "https://github.com/KrChiranjeevi/Intership-TaxPal",
+    Link: "https://intership-tax-pal-zgld.vercel.app/login",
     Github: "https://github.com/KrChiranjeevi/Intership-TaxPal",
     Features: [
       "Real-time expense tracking and categorization with dynamic visual charts.",
@@ -164,7 +164,7 @@ const localProjects = [
     Title: "E-Commerce-Store", 
     Description: "A modern, high-performance shopping platform featuring a sleek UI, dynamic product filtering, and a seamless checkout experience.", 
     Img: "/project_ecommerce.png", 
-    Link: "https://github.com/KrChiranjeevi/e-commerce",
+    Link: "https://e-commerce-iota-lilac-17.vercel.app/",
     Github: "https://github.com/KrChiranjeevi/e-commerce",
     Features: [
       "Dynamic product catalog with advanced filtering and search capabilities by category and price.",
