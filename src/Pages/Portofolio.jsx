@@ -144,6 +144,22 @@ const localCertificates = [
 
 const localProjects = [
   { 
+    id: "proj-10", 
+    Title: "InvestAgent AI", 
+    Description: "An intelligent, full-stack web application built on Next.js 14 App Router and LangChain.js that performs automated AI investment research.", 
+    Img: "/project_investagent.png", 
+    Link: "https://invest-agent-ai.vercel.app/",
+    Github: "https://github.com/KrChiranjeevi/InvestAgent-AI",
+    Features: [
+      "Automated AI investment analysis and research generation.",
+      "Built with Next.js 14 App Router for optimal performance.",
+      "Integrates LangChain.js for advanced language model workflows.",
+      "Interactive UI for querying and displaying financial data.",
+      "Full-stack implementation with seamless API integration."
+    ],
+    TechStack: ["Next.js", "React", "LangChain", "Tailwind CSS", "TypeScript"]
+  },
+  { 
     id: "proj-9", 
     Title: "Internship-TaxPal", 
     Description: "A comprehensive financial management and tax estimation tool designed to simplify accounting for freelancers and small businesses.", 
