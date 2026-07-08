@@ -192,35 +192,6 @@ const localProjects = [
     TechStack: ["JavaScript", "ReactJS", "Redux", "Tailwind CSS", "Vite", "Axios"]
   },
   { 
-    id: "proj-7", 
-    Title: "Weather-Insight", 
-    Description: "A real-time weather forecasting application providing detailed meteorological data with a beautiful, intuitive interface.", 
-    Img: "/project_weather.png", 
-    Link: "https://github.com/KrChiranjeevi/Weather-Information",
-    Github: "https://github.com/KrChiranjeevi/Weather-Information",
-    Features: [
-      "Live weather updates using OpenWeatherMap API integration for global city search.",
-      "Detailed 5-day forecast with humidity, wind speed, and UV index tracking.",
-      "Dynamic background changes and thematic icons based on current weather conditions.",
-      "Location-based weather detection for instant local forecasting.",
-      "Sleek and minimalist glassmorphism interface for superior readability."
-    ],
-    TechStack: ["JavaScript", "ReactJS", "API Integration", "Tailwind CSS", "Lucide React"]
-  },
-  { 
-    id: "proj-6", 
-    Title: "Soil-Pollution-website", 
-    Description: "Environmental website front page designed to highlight soil pollution and conservation using HTML and CSS.", 
-    Img: "/project_soil_pollution_1773175628332.png", 
-    Link: "https://github.com/KrChiranjeevi/Soil-Pollution-website-Front-Page",
-    Features: [
-      "Presents a visually engaging, responsive front page layout focused on environmental themes.",
-      "Highlights key facts and figures regarding soil pollution to educate visitors.",
-      "Utilizes semantic HTML structure and custom CSS styling for cross-browser compatibility."
-    ],
-    TechStack: ["HTML", "CSS", "Responsive Design"]
-  },
-  { 
     id: "proj-5", 
     Title: "Chiranjeevi-Portfolio", 
     Description: "A sleek, premium dark-mode developer portfolio tailored to showcase my skills and projects.", 
@@ -232,6 +203,20 @@ const localProjects = [
       "Integrates a dynamic Contact Form connected directly to an email inbox via Formspree."
     ],
     TechStack: ["ReactJS", "Vite", "Tailwind CSS", "Framer Motion", "Lottie-React"]
+  },
+  { 
+    id: "proj-1", 
+    Title: "AI-Interview-Practice-Assistant", 
+    Description: "Created an interactive AI-powered interview preparation chatbot that simulates technical interviews across programming, DSA, algorithms, and system design topics.", 
+    Img: "/project_interview_1773175716358.png", 
+    Link: "https://github.com/KrChiranjeevi/AI-Interview-Practice-Assistant",
+    Features: [
+      "Simulates technical interviews covering programming, DSA, algorithms, and system design.",
+      "Integrates Gemini API with a Flask backend to deliver context-aware technical responses.",
+      "Improves the relevance and clarity of interview answers with AI assistance.",
+      "Provides a clean layout with Tailwind CSS simulating a real-world coding assessment portal."
+    ],
+    TechStack: ["HTML", "JavaScript", "Tailwind CSS", "Python", "Flask", "Gemini API", "Priority Queue"]
   },
   { 
     id: "proj-4", 
@@ -276,18 +261,33 @@ const localProjects = [
     TechStack: ["HTML", "CSS", "JavaScript", "Web Speech API"]
   },
   { 
-    id: "proj-1", 
-    Title: "AI-Interview-Practice-Assistant", 
-    Description: "Created an interactive AI-powered interview preparation chatbot that simulates technical interviews across programming, DSA, algorithms, and system design topics.", 
-    Img: "/project_interview_1773175716358.png", 
-    Link: "https://github.com/KrChiranjeevi/AI-Interview-Practice-Assistant",
+    id: "proj-7", 
+    Title: "Weather-Insight", 
+    Description: "A real-time weather forecasting application providing detailed meteorological data with a beautiful, intuitive interface.", 
+    Img: "/project_weather.png", 
+    Link: "https://github.com/KrChiranjeevi/Weather-Information",
+    Github: "https://github.com/KrChiranjeevi/Weather-Information",
     Features: [
-      "Simulates technical interviews covering programming, DSA, algorithms, and system design.",
-      "Integrates Gemini API with a Flask backend to deliver context-aware technical responses.",
-      "Improves the relevance and clarity of interview answers with AI assistance.",
-      "Provides a clean layout with Tailwind CSS simulating a real-world coding assessment portal."
+      "Live weather updates using OpenWeatherMap API integration for global city search.",
+      "Detailed 5-day forecast with humidity, wind speed, and UV index tracking.",
+      "Dynamic background changes and thematic icons based on current weather conditions.",
+      "Location-based weather detection for instant local forecasting.",
+      "Sleek and minimalist glassmorphism interface for superior readability."
     ],
-    TechStack: ["HTML", "JavaScript", "Tailwind CSS", "Python", "Flask", "Gemini API", "Priority Queue"]
+    TechStack: ["JavaScript", "ReactJS", "API Integration", "Tailwind CSS", "Lucide React"]
+  },
+  { 
+    id: "proj-6", 
+    Title: "Soil-Pollution-website", 
+    Description: "Environmental website front page designed to highlight soil pollution and conservation using HTML and CSS.", 
+    Img: "/project_soil_pollution_1773175628332.png", 
+    Link: "https://github.com/KrChiranjeevi/Soil-Pollution-website-Front-Page",
+    Features: [
+      "Presents a visually engaging, responsive front page layout focused on environmental themes.",
+      "Highlights key facts and figures regarding soil pollution to educate visitors.",
+      "Utilizes semantic HTML structure and custom CSS styling for cross-browser compatibility."
+    ],
+    TechStack: ["HTML", "CSS", "Responsive Design"]
   },
 ];
 
