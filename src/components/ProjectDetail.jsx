@@ -13,7 +13,8 @@ import {
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
-
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 const TECH_ICONS = {
   React: Globe,
   Tailwind: Layout,
@@ -107,6 +108,8 @@ const ProjectDetails = () => {
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [readmeContent, setReadmeContent] = useState('');
+  const [isReadmeLoading, setIsReadmeLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -123,6 +126,36 @@ const ProjectDetails = () => {
       setProject(enhancedProject);
     }
   }, [id]);
+
+  useEffect(() => {
+    if (project && project.Github && project.Github !== 'Private') {
+      const fetchReadme = async () => {
+        setIsReadmeLoading(true);
+        try {
+          const urlParts = project.Github.split('/');
+          const owner = urlParts[urlParts.length - 2];
+          const repo = urlParts[urlParts.length - 1];
+          if (!owner || !repo) return;
+          const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/README.md`;
+          const response = await fetch(rawUrl);
+          if (response.ok) {
+            setReadmeContent(await response.text());
+          } else {
+            const masterUrl = `https://raw.githubusercontent.com/${owner}/${repo}/master/README.md`;
+            const masterResponse = await fetch(masterUrl);
+            if (masterResponse.ok) {
+              setReadmeContent(await masterResponse.text());
+            }
+          }
+        } catch (error) {
+          console.error("Failed to fetch README", error);
+        } finally {
+          setIsReadmeLoading(false);
+        }
+      };
+      fetchReadme();
+    }
+  }, [project]);
 
   if (!project) {
     return (
@@ -258,6 +291,38 @@ const ProjectDetails = () => {
               </div>
             </div>
           </div>
+
+          {/* Full-width Documentation Section */}
+          {(readmeContent || isReadmeLoading) && (
+            <div className="mt-12 md:mt-20 bg-white/[0.02] backdrop-blur-xl rounded-2xl p-6 md:p-10 border border-white/10 hover:border-white/20 transition-colors duration-300">
+              <h3 className="text-2xl md:text-3xl font-semibold text-white/90 mb-8 flex items-center gap-3">
+                <Github className="w-6 h-6 md:w-8 md:h-8 text-blue-400" />
+                GitHub Documentation
+              </h3>
+              {isReadmeLoading ? (
+                <div className="flex justify-center py-12">
+                  <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin" />
+                </div>
+              ) : (
+                <div className="prose prose-invert prose-sm md:prose-base prose-blue max-w-none 
+                  prose-headings:text-white/90 prose-headings:font-semibold 
+                  prose-p:text-gray-300/90 prose-p:leading-relaxed
+                  prose-a:text-blue-400 hover:prose-a:text-blue-300
+                  prose-strong:text-white/90 
+                  prose-li:text-gray-300/90 
+                  prose-code:text-pink-300 prose-code:bg-pink-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-mono
+                  prose-pre:bg-black/40 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-xl
+                  prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-img:shadow-2xl prose-img:mx-auto
+                  prose-hr:border-white/10
+                  prose-blockquote:border-l-blue-500 prose-blockquote:bg-blue-500/5 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
+                  [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {readmeContent}
+                  </ReactMarkdown>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
