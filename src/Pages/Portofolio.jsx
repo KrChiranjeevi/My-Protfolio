@@ -148,7 +148,7 @@ const localProjects = [
     Title: "Internship-TaxPal", 
     Description: "A comprehensive financial management and tax estimation tool designed to simplify accounting for freelancers and small businesses.", 
     Img: "/project_taxpal.png", 
-    Link: "https://intership-tax-pal-zgld.vercel.app/login",
+    Link: "https://intership-tax-pal-zgld.vercel.app/",
     Github: "https://github.com/KrChiranjeevi/Intership-TaxPal",
     Features: [
       "Real-time expense tracking and categorization with dynamic visual charts.",
