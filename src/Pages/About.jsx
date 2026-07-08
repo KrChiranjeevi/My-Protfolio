@@ -52,7 +52,7 @@ const ProfileImage = memo(() => (
           <img
             src={`${import.meta.env.BASE_URL}favicon-passport.jpeg`}
             alt="Profile"
-            className="w-full h-full object-cover object-[50%_10%] scale-[1.25] transition-all duration-700 group-hover:scale-[1.35] group-hover:rotate-2"
+            className="w-full h-full object-cover object-top scale-100 transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
           />
 
