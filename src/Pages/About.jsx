@@ -42,7 +42,7 @@ const ProfileImage = memo(() => (
       </div>
 
       <div className="relative">
-        <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
+        <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105 bg-[#e4e4e4]">
           <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
           
           {/* Optimized overlay effects - disabled on mobile */}
@@ -52,7 +52,7 @@ const ProfileImage = memo(() => (
           <img
             src={`${import.meta.env.BASE_URL}favicon-passport.jpeg`}
             alt="Profile"
-            className="w-full h-full object-cover object-top scale-90 transition-all duration-700 group-hover:scale-100 group-hover:rotate-2"
+            className="w-full h-full object-contain scale-[1.02] transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
           />
 
